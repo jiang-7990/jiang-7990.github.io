@@ -1,0 +1,38 @@
+.dw-uncertainty {
+  margin-top: 19px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line, #d8e2dd);
+}
+
+.dw-uncertainty summary {
+  width: fit-content;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.dw-uncertainty-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 6px 0 4px;
+  color: var(--muted, #52655f);
+  font-size: .875rem;
+}
+
+.dw-uncertainty-heading p,
+.dw-uncertainty-note,
+.dw-uncertainty .dw-status { margin: 0; }
+
+.dw-uncertainty-note {
+  color: var(--muted, #52655f);
+  font-size: .8125rem;
+  line-height: 1.5;
+}
+
+.dw-uncertainty .dw-uncertainty-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow-wrap: anywhere;
+  margin-block: 12px 0;
+}

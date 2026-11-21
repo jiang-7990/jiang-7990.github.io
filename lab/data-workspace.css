@@ -1,0 +1,292 @@
+.dw {
+  min-width: 0;
+  color: var(--ink, #142c27);
+}
+
+.dw [hidden] { display: none !important; }
+.dw button, .dw select, .dw input { font: inherit; }
+.dw input, .dw select { color: inherit; }
+.dw button { cursor: pointer; }
+.dw button:disabled { cursor: default; opacity: .44; }
+.dw :is(button, select, input, summary):focus-visible {
+  outline: 2px solid var(--primary, #08795f);
+  outline-offset: 2px;
+}
+
+.dw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  padding: 0 0 18px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--line, #d8e2dd);
+}
+
+.dw-title-group {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.dw-eyebrow { color: var(--muted, #52655f); font-size: .875rem; font-weight: 600; }
+
+.dw input.dw-title {
+  max-width: 600px;
+  width: 100%;
+  padding: 0 2px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.dw input.dw-title:hover { border-color: var(--line, #d8e2dd); }
+
+.dw-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 13px;
+  min-height: 40px;
+  border: 1px solid var(--primary, #08795f);
+  border-radius: 6px;
+  background: var(--primary, #08795f);
+  color: #fff;
+  font-weight: 650 !important;
+  white-space: nowrap;
+}
+
+.dw-save:hover:enabled { background: #06674f; }
+
+.dw-panes {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  gap: 26px;
+  align-items: start;
+}
+
+.dw-table-pane, .dw-plot-pane { min-width: 0; }
+.dw-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px 10px;
+  margin-bottom: 10px;
+  min-height: 34px;
+}
+
+.dw-bar h2 {
+  margin: 0;
+  line-height: 1.32;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.dw-actions { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.dw-icon, .dw-text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  min-height: 32px;
+  min-width: 32px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted, #52655f);
+}
+
+.dw-actions .dw-icon { border-color: var(--line, #d8e2dd); background: var(--surface, #fff); }
+.dw-icon:hover:enabled, .dw-text-button:hover:enabled { background: #e9f2ec; color: #075e4b; }
+.dw-icon svg, .dw-text-button svg, .dw-save svg { flex: none; width: 17px; height: 17px; }
+.dw-text-button { font-size: .875rem !important; padding: 0 6px; }
+
+.dw-grid, .dw-residual-grid { overflow: auto; max-width: 100%; }
+.dw-grid {
+  max-height: 345px;
+  border: 1px solid var(--line, #d8e2dd);
+  border-radius: 6px;
+  background: var(--surface, #fff);
+}
+
+.dw-grid:focus-visible { outline: 2px solid var(--primary, #08795f); outline-offset: 2px; }
+.dw-grid table, .dw-residual-grid table { border-collapse: separate; border-spacing: 0; width: 100%; }
+
+.dw-grid td, .dw-grid th {
+  padding: 0;
+  height: 36px;
+  border-right: 1px solid #e6ece8;
+  border-bottom: 1px solid #e6ece8;
+  text-align: left;
+}
+
+.dw-grid thead th {
+  height: 60px;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  background: #f0f5f1;
+}
+
+.dw-grid :is(th,td):last-child { border-right: 0; }
+.dw-grid tbody tr:last-child :is(th,td) { border-bottom: 0; }
+.dw-grid tbody tr:nth-child(even) { background: #fafcfb; }
+.dw-grid input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 36px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: .875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.dw-grid input:focus-visible { z-index: 2; position: relative; outline-offset: -2px; background: #fff; }
+.dw-grid input[aria-invalid="true"] { background: #fff0ef; }
+.dw-grid input[readonly] { background: #eef5f1; color: #31584b; }
+.dw-column { min-width: 115px; position: relative; padding: 5px 4px; }
+.dw-column input { height: 25px; padding: 0 5px; font-weight: 650; }
+.dw-column input[data-dw-prop="unit"] { color: var(--muted, #52655f); font-size: .8125rem; font-weight: 400; }
+.dw-column:has(button) input { width: calc(100% - 25px); }
+.dw-column button { position: absolute; top: 4px; right: 2px; min-width: 24px; min-height: 24px; }
+.dw-column button svg { width: 14px; height: 14px; }
+
+.dw-grid .dw-row-number {
+  text-align: center;
+  min-width: 32px;
+  width: 36px;
+  color: var(--muted, #52655f);
+  font-size: .8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.dw-grid .dw-row-action { min-width: 32px; width: 34px; text-align: center; }
+.dw-row-action .dw-icon { min-width: 28px; min-height: 28px; }
+.dw-row-action .dw-icon svg { width: 14px; height: 14px; }
+.dw-table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 7px;
+  color: var(--muted, #52655f);
+  font-size: .875rem;
+}
+
+.dw-error {
+  border-top: 1px solid var(--line, #d8e2dd);
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+.dw-form-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+.dw-chart-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.dw-formula-controls { grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)); margin-top: 13px; }
+.dw-form-row label {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  min-width: 0;
+  color: var(--muted, #52655f);
+  font-size: .875rem;
+}
+
+.dw-form-row :is(input, select) {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 5px 8px;
+  border: 1px solid var(--line, #d8e2dd);
+  border-radius: 5px;
+  background: var(--surface, #fff);
+  color: var(--ink, #142c27);
+  font-size: .875rem;
+}
+
+.dw-form-row select { padding-right: 22px; }
+.dw-status { color: #9b413a; font-size: .8125rem; margin-top: 5px; }
+.dw-status:empty { display: none; }
+.dw-calc-frame {
+  position: relative;
+  min-width: 0;
+  height: 320px;
+  padding: 12px 10px 8px;
+  border: 1px solid var(--line, #d8e2dd);
+  border-radius: 6px;
+  margin-top: 11px;
+  background: #fff;
+}
+
+.dw-empty {
+  position: absolute;
+  inset: 24% 10% 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--muted, #52655f);
+  font-size: .875rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dw-empty svg { width: 26px; height: 26px; }
+
+.dw-fit-result {
+  margin-top: 16px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line, #d8e2dd);
+}
+
+.dw-count { color: var(--muted, #52655f); font-size: .875rem; }
+.dw-equation {
+  font-family: "Cascadia Mono", Consolas, "Microsoft YaHei", monospace;
+  font-size: .9375rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.dw-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 9px 12px;
+  margin: 12px 0 0;
+}
+
+.dw-metrics:empty { display: none; }
+.dw-metrics dt { color: var(--muted, #52655f); font-size: .8125rem; }
+.dw-metrics dd { margin: 3px 0 0; font-size: 1rem; font-weight: 650; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.dw details { margin-top: 12px; }
+.dw summary { width: max-content; max-width: 100%; cursor: pointer; color: var(--primary, #08795f); font-size: .875rem; }
+.dw-residual-grid { max-height: 205px; margin-top: 5px; }
+.dw-residual-grid :is(td,th) { padding: 5px 7px; border-bottom: 1px solid var(--line, #d8e2dd); text-align: right; font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.dw-residual-grid thead th { position: sticky; top: 0; background: #f0f5f1; white-space: nowrap; }
+.dw-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+@media (max-width: 1050px) {
+  .dw-panes { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .dw-header { margin-bottom: 14px; padding-bottom: 13px; }
+  .dw input.dw-title { font-size: 1.125rem; }
+  .dw-panes { gap: 20px; }
+  .dw-calc-frame { height: 245px; }
+  .dw-formula-controls > :first-child { grid-column: 1 / -1; }
+  .dw-formula-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dw-chart-controls { gap: 5px; }
+  .dw-chart-controls select { padding-inline: 5px; }
+}

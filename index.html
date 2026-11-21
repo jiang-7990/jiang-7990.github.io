@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="物理实验报告参考、实验数据拟合和图表工作台">
+  <title>实验报告助手</title>
+  <link rel="stylesheet" href="/lab/lab.css">
+  <link rel="stylesheet" href="/lab/report-workspace.css">
+  <link rel="stylesheet" href="/lab/report-unified.css">
+  <link rel="stylesheet" href="/lab/data-workspace.css">
+  <link rel="stylesheet" href="/lab/uncertainty.css">
+  <link rel="stylesheet" href="/lab/themes.css">
+</head>
+<body class="antialiased">
+  <div class="lab-shell">
+    <aside class="lab-rail" aria-label="主导航">
+      <div id="lab-brand"></div>
+      <nav id="lab-nav"></nav>
+      <div id="lab-foot"></div>
+    </aside>
+    <div class="lab-main-shell">
+      <header class="lab-topbar" id="lab-topbar"></header>
+      <main id="lab-content" tabindex="-1" aria-label="内容">
+        <p class="lab-loading" role="status">正在加载实验目录…</p>
+      </main>
+    </div>
+  </div>
+  <dialog id="photo-dialog" aria-labelledby="photo-title"></dialog>
+  <input id="photo-camera" type="file" accept="image/*" capture="environment" hidden>
+  <input id="photo-gallery" type="file" accept="image/*" hidden>
+  <div id="lab-toast" hidden role="status" aria-live="polite"></div>
+  <noscript>请启用 JavaScript 后使用物理实验工作台。</noscript>
+  <script src="/lab/app.mjs" type="module"></script>
+</body>
+</html>
